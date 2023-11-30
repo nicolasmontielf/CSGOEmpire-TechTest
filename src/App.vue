@@ -9,8 +9,8 @@
             <LayoutNavbar />
         </header>
 
-        <main>
-            <router-view />
+        <main class="container mx-auto mt-10 mb-5">
+            <RouterView />
         </main>
 
         <footer>
