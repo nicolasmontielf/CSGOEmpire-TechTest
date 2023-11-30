@@ -1,3 +1,6 @@
+import format from 'date-fns/format'
+import axios from 'axios'
+
 /**
  * A class representing a service that processes the data for match schedule
  * and generates leaderboard.
@@ -8,8 +11,20 @@
  *       ADDITIONALLY, MAKE SURE THAT ALL LIBRARIES USED IN THIS FILE FILE ARE COMPATIBLE WITH PURE JAVASCRIPT
  * 
  */
-class LeagueService {    
+class LeagueService {
     
+    ENDPOINT_ACCESS_TOKEN = '/api/v1/getAccessToken';
+    ENDPOINT_GET_MATCHES = '/api/v1/getAllMatches';
+
+    matches = []
+    instance = axios.create({
+        baseURL: 'http://localhost:3001',
+        timeout: 3000,
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+
     /**
      * Sets the match schedule.
      * Match schedule will be given in the following form:
@@ -36,14 +51,23 @@ class LeagueService {
      * 
      * @param {Array} matches List of matches.
      */    
-    setMatches(matches) {}
+    setMatches(matches) {
+        this.matches = matches.map(match => {
+            const date = new Date(match.matchDate)
+            match.matchDate = format(date, 'dd.MM.yyyy')
+            match.matchTime = format(date, 'HH:mm')
+            return match
+        })
+    }
 
     /**
      * Returns the full list of matches.
      * 
      * @returns {Array} List of matches.
      */
-    getMatches() {}
+    getMatches() {
+        return this.matches;
+    }
 
     /**
      * Returns the leaderboard in a form of a list of JSON objecs.
@@ -61,11 +85,81 @@ class LeagueService {
      * @returns {Array} List of teams representing the leaderboard.
      */
     getLeaderboard() {}
+
+    /**
+     * Returns the bearer token from the local storage if it exists and it is not expired.
+     * @returns {String | undefined} Bearer token.
+    */
+    getStoredBearerToken() {
+        const storedToken = localStorage.getItem("league_auth_token")
+        if (!storedToken) {
+            return undefined;
+        }
+
+        const { expiration, token } = JSON.parse(storedToken)
+        if (expiration < Date.now()) {
+            return undefined;
+        }
+
+        return token;
+    }
+
+    /**
+     * Store the bearer token in the local storage with an expiration time of 2 hours.
+     * @param {String} token Bearer token.
+     * @returns {void}
+     */
+    setBearerToken(token) {
+        const currentTimeStamp = Date.now()
+        const expirationTimeStamp = currentTimeStamp + (1000 * 60 * 60 * 2) // 2 hours
+
+        localStorage.setItem("league_auth_token", JSON.stringify({ token, expiration: expirationTimeStamp }))
+    }
     
     /**
      * Asynchronic function to fetch the data from the server.
      */
-    async fetchData() {}    
+    async fetchData() {
+        const bearerToken = this.getStoredBearerToken()
+        if (!bearerToken) {
+            await this.fetchAndStoreBearerToken()
+        }
+
+        this.instance.defaults.headers.common['Authorization'] = 'Bearer ' + this.getStoredBearerToken();
+        const response = await this.instance(this.ENDPOINT_GET_MATCHES);
+
+        if (response.status !== 200) {
+            console.error('Error on request getting matches')
+            return;
+        }
+
+        const { matches, success } = response.data
+        if (!success) {
+            console.error('Error on response getting matches')
+            return;
+        }
+
+        this.setMatches(matches)
+    }
+
+    /**
+     * Asynchronic function to fetch the bearer token used to authenticate the requests.
+     */
+    async fetchAndStoreBearerToken() {
+        const response = await this.instance(this.ENDPOINT_ACCESS_TOKEN);
+        if (response.status !== 200) {
+            console.error('Error on request getting access token')
+            return;
+        }
+
+        const { access_token, success } = response.data
+        if (!success) {
+            console.error('Error on response getting access token')
+            return;
+        }
+
+        this.setBearerToken(access_token)
+    }
 }
 
 export default LeagueService;

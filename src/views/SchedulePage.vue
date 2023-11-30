@@ -1,37 +1,23 @@
 <script setup>
     import ScheduleTable from '../components/schedule/ScheduleTable'
     import TeamWithFlag from '../components/team/TeamWithFlag'
+    import LeagueService from '../services/LeagueService'
+    import { ref, onMounted } from 'vue'
 
-    const schedule = [
-        {
-            "matchDate": 1651744228685,
-            "stadium": "Maracanã",
-            "homeTeam": "Brazil",
-            "awayTeam": "Serbia",
-            "matchPlayed": true,
-            "homeTeamScore": 1,
-            "awayTeamScore": 0
-        },
-        {
-            "matchDate": 1651744228685,
-            "stadium": "Stade de Suisse",
-            "homeTeam": "Switzerland",
-            "awayTeam": "Serbia",
-            "matchPlayed": true,
-            "homeTeamScore": 2,
-            "awayTeamScore": 2
-        },
-        {
-            "matchDate": 1651744228685,
-            "stadium": "Stadion Rajko Mitic",
-            "homeTeam": "Serbia",
-            "awayTeam": "Cameroon",
-            "matchPlayed": false,
-            "homeTeamScore": 0,
-            "awayTeamScore": 0
-        },
-    ]
+    const schedule = ref([])
+    const leagueService = new LeagueService()
 
+    onMounted(async () => {
+        await leagueService.fetchData()
+        schedule.value = leagueService.getMatches()
+    })
+
+    function formatResult(match) {
+        if (!match.matchPlayed) {
+            return '- : -'
+        }
+        return `${match.homeTeamScore} : ${match.awayTeamScore}`
+    }
 </script>
 
 <template>
@@ -64,7 +50,10 @@
                 :key="match.id"
             >
                 <template #matchDate>
-                    <p>{{ match.matchDate }}</p>
+                    <div class="inline-block">
+                        <p class="text-right">{{ match.matchDate }}</p>
+                        <p class="text-right">{{ match.matchTime }}</p>
+                    </div>
                 </template>
                 <template #stadium>
                     <p>{{ match.stadium }}</p>
@@ -75,9 +64,9 @@
                 <template #awayTeam>
                     <TeamWithFlag :team="match.awayTeam" reverse />
                 </template>
-                <!-- <template #result>
-                    <p>{{ match.result }}</p>
-                </template> -->
+                <template #result>
+                    {{ formatResult(match) }}
+                </template>
             </ScheduleTable>
 
         </div>
