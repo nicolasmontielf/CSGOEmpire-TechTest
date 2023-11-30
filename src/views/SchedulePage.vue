@@ -47,7 +47,7 @@
             <ScheduleTable
                 v-for="(match, index) of schedule"
                 :index="index"
-                :key="match.id"
+                :key="index"
             >
                 <template #matchDate>
                     <div class="inline-block">
