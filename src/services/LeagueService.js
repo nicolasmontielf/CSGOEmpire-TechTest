@@ -15,10 +15,11 @@ class LeagueService {
     
     ENDPOINT_ACCESS_TOKEN = '/api/v1/getAccessToken';
     ENDPOINT_GET_MATCHES = '/api/v1/getAllMatches';
+    ENDPOINT_API_BASE = process.env.VUE_APP_API_BASE_URL;
 
     matches = []
     instance = axios.create({
-        baseURL: 'http://localhost:3001',
+        baseURL: this.ENDPOINT_API_BASE,
         timeout: 3000,
         headers: {
             'Content-Type': 'application/json',
