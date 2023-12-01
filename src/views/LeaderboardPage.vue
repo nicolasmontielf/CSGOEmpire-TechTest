@@ -13,7 +13,7 @@
             <!-- Table Header -->
             <LeaderBoardTable is-header>
                 <template #teamName>
-                    <p>Team</p>
+                    <p>Team Name</p>
                 </template>
                 <template #mp>
                     <p>MP</p>
@@ -30,21 +30,21 @@
             </LeaderBoardTable>
 
             <!-- Table Body -->
-            <LeaderBoardTable>
+            <LeaderBoardTable v-for="n in 5" :key="n">
                 <template #teamName>
                     <TeamWithFlag team="Brazil" reverse />
                 </template>
                 <template #mp>
-                    <p>3</p>
+                    <p class="text-base">3</p>
                 </template>
                 <template #gf>
-                    <p>8</p>
+                    <p class="text-base">8</p>
                 </template>
                 <template #ga>
-                    <p>4</p>
+                    <p class="text-base">4</p>
                 </template>
                 <template #points>
-                    <p>7</p>
+                    <p class="text-base text-color-page-header">7</p>
                 </template>
             </LeaderBoardTable>
 
