@@ -9,7 +9,7 @@
             <LayoutNavbar />
         </header>
 
-        <main class="container mx-auto mt-10 mb-5">
+        <main class="app-container mx-auto mt-[60px] mb-5">
             <RouterView />
         </main>
 
@@ -19,3 +19,10 @@
 
     </div>
 </template>
+
+<style scoped>
+    .app-container {
+        width: 90%;
+        margin-top: 60px;
+    }
+</style>

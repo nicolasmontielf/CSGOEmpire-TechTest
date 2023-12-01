@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        "./src/**/*.{js,ts,jsx,tsx}",
+        "./src/**/*.{vue,js}",
     ],
     theme: {
         colors: {
@@ -14,6 +14,13 @@ module.exports = {
             'color-footer': '#F6F7F7',
             'color-table-even': '#F6F7F7',
             ...colors
+        },
+        screens: {
+            sm: '640px',
+            md: '700px',
+            lg: '1000px',
+            xl: '1280px',
+            '2xl': '1536px',
         },
         extend: {},
     },

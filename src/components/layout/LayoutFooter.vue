@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-color-footer w-full mx-auto p-4 md:flex md:items-center md:justify-end">
-        <span class="text-sm text-color-text-table sm:text-center dark:text-gray-400">
+    <div class="bg-color-footer w-full mx-auto h-10 flex justify-end items-center px-10">
+        <span class="text-sm text-color-text-table">
             API Version: 1.0
         </span>
     </div>
