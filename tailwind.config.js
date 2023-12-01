@@ -1,4 +1,5 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -22,7 +23,11 @@ module.exports = {
             xl: '1280px',
             '2xl': '1536px',
         },
-        extend: {},
+        extend: {
+            fontFamily: {
+                'sans': ['"Open Sans"', '"sans-serif"', ...defaultTheme.fontFamily.sans],
+            }
+        },
     },
     plugins: [],
 }
