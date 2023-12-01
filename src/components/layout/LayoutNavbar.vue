@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <nav class="border-gray-200 bg-blue-700">
+    <nav class="border-gray-200 bg-color-page-header">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <RouterLink to="/">
                 <img src="/images/logo.svg" class="h-10" alt="League logo" />

@@ -23,7 +23,7 @@
 <template>
     <div class="w-full">
         <div class="mb-5">
-            <h1 class="text-center text-2xl font-bold">League Schedule</h1>
+            <h1 class="text-center text-2xl font-bold text-color-title">League Schedule</h1>
         </div>
 
         <div id="schedule-table-container">
@@ -65,7 +65,7 @@
                     <TeamWithFlag :team="match.awayTeam" reverse />
                 </template>
                 <template #result>
-                    {{ formatResult(match) }}
+                    <p class="font-bold text-base">{{ formatResult(match) }}</p>
                 </template>
             </ScheduleTable>
 

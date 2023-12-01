@@ -9,7 +9,7 @@
 <template>
     <li>
         <RouterLink
-            class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0"
+            class="text-base block py-2 px-3 text-white rounded md:bg-transparent md:p-0"
             :to="link"
         >
             {{ title }}

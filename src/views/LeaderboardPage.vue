@@ -6,7 +6,7 @@
 <template>
     <div class="w-full">
         <div class="mb-5">
-            <h1 class="text-center text-2xl font-bold">League Standings</h1>
+            <h1 class="text-center text-2xl font-bold text-color-title">League Standings</h1>
         </div>
 
         <div id="leaderboard-table-container">
@@ -30,7 +30,7 @@
             </LeaderBoardTable>
 
             <!-- Table Body -->
-            <LeaderBoardTable >
+            <LeaderBoardTable>
                 <template #teamName>
                     <TeamWithFlag team="Brazil" reverse />
                 </template>

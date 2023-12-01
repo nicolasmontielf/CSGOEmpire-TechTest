@@ -20,7 +20,7 @@
 </script>
 
 <template>
-    <div :class="[reverse ? 'flex-row-reverse' : 'flex-row', 'flex gap-2 items-center justify-end']">
+    <div :class="[reverse ? 'flex-row-reverse' : 'flex-row', 'flex gap-2 items-center justify-end text-base font-bold']">
         <p>{{ team }}</p>
         <img :src="teamFlag" class="h-8" alt="">
     </div>

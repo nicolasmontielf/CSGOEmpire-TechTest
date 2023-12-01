@@ -10,8 +10,8 @@
     })
 
     const classes = reactive({
-        'text-sm grid grid-cols-8 py-5 px-5 border-b-slate-100 border': true,
-        'font-semibold bg-blue-100': props.isHeader,
+        'text-sm grid grid-cols-8 py-5 px-5 border-color-table-main border text-color-text-table': true,
+        'font-semibold color-table-main text-xs': props.isHeader,
     })
 </script>
 
