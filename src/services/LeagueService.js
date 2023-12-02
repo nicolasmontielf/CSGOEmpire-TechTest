@@ -1,5 +1,6 @@
 import format from 'date-fns/format'
 import axios from 'axios'
+import LeaderboardGeneratorService from './LeaderboardService.js'
 
 /**
  * A class representing a service that processes the data for match schedule
@@ -12,7 +13,6 @@ import axios from 'axios'
  * 
  */
 class LeagueService {
-    
     ENDPOINT_ACCESS_TOKEN = '/api/v1/getAccessToken';
     ENDPOINT_GET_MATCHES = '/api/v1/getAllMatches';
     ENDPOINT_API_BASE = process.env.VUE_APP_API_BASE_URL;
@@ -85,7 +85,10 @@ class LeagueService {
      * 
      * @returns {Array} List of teams representing the leaderboard.
      */
-    getLeaderboard() {}
+    getLeaderboard() {
+        const leaderboardService = new LeaderboardGeneratorService(this.matches)
+        return leaderboardService.getLeaderboard()
+    }
 
     /**
      * Returns the bearer token from the local storage if it exists and it is not expired.

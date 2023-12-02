@@ -1,6 +1,16 @@
 <script setup>
     import LeaderBoardTable from '../components/leaderboard/LeaderBoardTable';
     import TeamWithFlag from '../components/team/TeamWithFlag'
+    import LeagueService from '../services/LeagueService'
+    import { ref, onMounted } from 'vue'
+
+    const leaderBoard = ref([])
+    const leagueService = new LeagueService()
+
+    onMounted(async () => {
+        await leagueService.fetchData()
+        leaderBoard.value = leagueService.getLeaderboard()
+    })
 </script>
 
 <template>
@@ -30,21 +40,21 @@
             </LeaderBoardTable>
 
             <!-- Table Body -->
-            <LeaderBoardTable v-for="n in 5" :key="n">
+            <LeaderBoardTable v-for="(team, index) of leaderBoard" :key="index">
                 <template #teamName>
-                    <TeamWithFlag team="Brazil" reverse />
+                    <TeamWithFlag :team="team.teamName" reverse />
                 </template>
                 <template #mp>
-                    <p class="text-base">3</p>
+                    <p class="text-base">{{ team.matchesPlayed }}</p>
                 </template>
                 <template #gf>
-                    <p class="text-base">8</p>
+                    <p class="text-base">{{ team.goalsFor }}</p>
                 </template>
                 <template #ga>
-                    <p class="text-base">4</p>
+                    <p class="text-base">{{ team.goalsAgainst }}</p>
                 </template>
                 <template #points>
-                    <p class="text-base text-color-page-header">7</p>
+                    <p class="text-base text-color-page-header">{{ team.points }}</p>
                 </template>
             </LeaderBoardTable>
 
