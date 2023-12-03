@@ -1,7 +1,7 @@
 /**
     * A class representing a service that processes the data for match schedule and generates leaderboard.
 */
-export default class LeaderboardGeneratorService {
+export default class LeaderboardService {
     constructor(matches) {
         this.matches = matches;
     }
