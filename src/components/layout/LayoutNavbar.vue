@@ -12,8 +12,8 @@
             </div>
             <div>
                 <ul class="font-medium flex flex-row border-0 gap-10">
-                    <NavbarMenuItem title="Schedule" icon="schedule" link="/" />
-                    <NavbarMenuItem title="Leaderboard" icon="leaderboard" link="/leaderboard" />
+                    <NavbarMenuItem title="Schedule" icon="schedule" :link="{ name: 'schedule' }" />
+                    <NavbarMenuItem title="Leaderboard" icon="leaderboard" :link="{ name: 'leaderboard' }" />
                 </ul>
             </div>
         </div>

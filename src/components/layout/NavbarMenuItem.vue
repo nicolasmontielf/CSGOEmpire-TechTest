@@ -1,8 +1,17 @@
 <script setup>
     defineProps({
-        title: String,
-        link: String,
-        icon: String
+        title: {
+            type: String,
+            required: true
+        },
+        link: {
+            type: [String, Object],
+            required: true
+        },
+        icon: {
+            type: String,
+            required: true
+        }
     })
 </script>
 
