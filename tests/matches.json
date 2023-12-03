@@ -1,0 +1,226 @@
+{
+    "head-to-head-with-2-teams": [
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stadion Rajko Mitic",
+            "homeTeam": "Serbia",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Switzerland",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 3
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Cameroon",
+            "matchPlayed": false,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        }
+    ],
+    "head-to-head-with-3-teams": [
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stadion Rajko Mitic",
+            "homeTeam": "Serbia",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Switzerland",
+            "matchPlayed": true,
+            "homeTeamScore": 4,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Cameroon",
+            "matchPlayed": false,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 2,
+            "awayTeamScore": 2
+        }
+    ],
+    "tiebreaker-by-goal-difference": [
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stadion Rajko Mitic",
+            "homeTeam": "Serbia",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Switzerland",
+            "matchPlayed": true,
+            "homeTeamScore": 3,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Cameroon",
+            "matchPlayed": false,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        }
+    ],
+    "tiebreaker-by-the-number-of-scored-goals": [
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Serbia",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stadion Rajko Mitic",
+            "homeTeam": "Serbia",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 1,
+            "awayTeamScore": 1
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Switzerland",
+            "matchPlayed": true,
+            "homeTeamScore": 4,
+            "awayTeamScore": 2
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Maracanã",
+            "homeTeam": "Brazil",
+            "awayTeam": "Cameroon",
+            "matchPlayed": true,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        },
+        {
+            "matchDate": 1651744228685,
+            "stadium": "Stade de Suisse",
+            "homeTeam": "Switzerland",
+            "awayTeam": "Cameroon",
+            "matchPlayed": false,
+            "homeTeamScore": 0,
+            "awayTeamScore": 0
+        }
+    ]
+}
