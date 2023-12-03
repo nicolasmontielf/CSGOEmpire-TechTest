@@ -7,7 +7,7 @@
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
         "start": "npm run serve",
-        "test": "jest"
+        "test": "jest --env=jsdom"
     },
     "dependencies": {
         "autoprefixer": "^9.8.8",
